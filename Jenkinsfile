@@ -9,7 +9,7 @@ pipeline {
         }
 	stage('Build Docker Image') {
   	    steps {
-        	sh 'docker build -t guigoldmann/apachejenkins:latest .'
+        	sh 'sudo docker build -t guigoldmann/apachejenkins:latest .'
     		}
 	}
     }
