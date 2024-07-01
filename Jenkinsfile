@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('SCM Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'jk-gh-tk', url: '<https://github.com/Guilherme-Goldmann/meuapachepipe.git>'
+                git branch: 'main', credentialsId: 'jk-gh-tk', url: 'https://github.com/Guilherme-Goldmann/meuapachepipe.git'
             }
         }
 	stage('Build Docker Image') {
