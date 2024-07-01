@@ -7,6 +7,11 @@ pipeline {
                 git branch: 'main', credentialsId: 'jk-gh-tk', url: '<https://github.com/Guilherme-Goldmann/meuapachepipe.git>'
             }
         }
+	stage('Build Docker Image') {
+  	    steps {
+        	sh 'docker build -t guigoldmann/apachejenkins:latest .'
+    		}
+	}
     }
 }
 
