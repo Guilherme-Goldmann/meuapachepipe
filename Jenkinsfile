@@ -12,6 +12,20 @@ pipeline {
         	sh 'docker build -t guigoldmann/apachejenkins:latest .'
     		}
 	}
+
+	stage('Push Docker Image to Hub') {
+            steps {
+                sh 'docker push guigoldmann/apachejenkins:latest '
+                }
+        }
+
+	stage('Run Docker Container') {
+            steps {
+                sh 'docker run -d -p 8070:80 --name testeapache guigoldmann/apachejenkins:latest'
+                }
+        }
+
+
     }
 }
 
