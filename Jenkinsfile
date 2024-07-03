@@ -13,12 +13,6 @@ pipeline {
     		}
 	}
 
-	stage('Run Docker Container') {
-            steps {
-                sh 'docker run -d -p 8070:80 --name testeapache guigoldmann/apachejenkins:latest'
-                }
-        }
-
 
     }
 }
