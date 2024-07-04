@@ -22,7 +22,7 @@ pipeline {
 
 	stage('Run Docker Container') {
             steps {
-		sh 'docker container stop testeapache'
+		sh 'docker container rm -f testeapache'
                 sh 'docker run -d -p 8070:80 --name testeapache guigoldmann/apachejenkins:latest'
                 }
         }
